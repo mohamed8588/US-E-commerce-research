@@ -49,7 +49,7 @@
 </head>
 <body class="bg-gray-100 text-gray-800 p-8">
 
-    <div class="max-w-5xl mx-auto">
+    <div class="px-4">
         <header class="text-center mb-12">
             <h1 class="text-4xl font-extrabold text-gray-900 mb-2">E-Commerce Industry Analysis Report</h1>
             <p class="text-lg text-gray-600">U.S. Market</p>
@@ -62,7 +62,7 @@
         </div>
 
         <!-- Main Report Content -->
-        <div id="mainReport" class="page-content">
+        <div id="mainReport" class="page-content max-w-7xl mx-auto">
             <!-- Table of Contents -->
             <section class="report-section" id="table-of-contents">
                 <h2 class="text-2xl font-bold mb-4 text-gray-900">Table of Contents</h2>
@@ -967,97 +967,6 @@
                         </tbody>
                     </table>
                 </div>
-
-                <!-- 4. Customer Metrics KPIs -->
-                <div class="my-8">
-                    <h3 class="text-xl font-bold mt-8 mb-4 text-gray-900">4. Customer Metrics KPIs</h3>
-
-                    <h4 class="text-lg font-bold mb-2 text-gray-800">Most Important</h4>
-                    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
-                        <thead>
-                            <tr class="bg-gray-200">
-                                <th>KPI</th>
-                                <th>Description</th>
-                                <th>Formula</th>
-                                <th>Benchmarks</th>
-                                <th>Insights</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="font-bold">Repeat Purchase Rate</td>
-                                <td>% of customers buying again.</td>
-                                <td>$(Repeat Customers \div Total Customers) \times 100$</td>
-                                <td>E-commerce avg. ~28%, best-in-class 40%+.</td>
-                                <td>Critical for reducing CAC dependence.</td>
-                            </tr>
-                            <tr class="bg-gray-50">
-                                <td class="font-bold">Customer Churn Rate</td>
-                                <td>% of customers lost in a period.</td>
-                                <td>$(Lost Customers \div Starting Customers) \times 100$</td>
-                                <td>Retail churn often 20–30% annually.</td>
-                                <td>Shows long-term retention problems.</td>
-                            </tr>
-                            <tr>
-                                <td class="font-bold">Return Rate</td>
-                                <td>% of purchased products returned.</td>
-                                <td>$(Returned Orders \div Total Orders) \times 100$</td>
-                                <td>E-commerce avg. 15–20%, fashion up to 30–40%.</td>
-                                <td>Impacts margins, logistics, and fraud risk.</td>
-                            </tr>
-                            <tr class="bg-gray-50">
-                                <td class="font-bold">Customer Lifetime Value (CLV / LTV)</td>
-                                <td>Total value a customer brings during their relationship.</td>
-                                <td>$AOV \times Purchase Frequency \times Customer Lifespan$</td>
-                                <td>Many D2C brands $200–$1,000+.</td>
-                                <td>Links directly with CAC — core profitability test.</td>
-                            </tr>
-                            <tr>
-                                <td class="font-bold">Customer Retention Rate (CRR)</td>
-                                <td>% of customers who stay active over time.</td>
-                                <td>$((Customers End – New Customers) \div Customers Start) \times 100$</td>
-                                <td>Healthy e-commerce CRR = ~30–40% annually.</td>
-                                <td>Stronger CRR reduces dependency on expensive acquisition.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <h4 class="text-lg font-bold mb-2 text-gray-800">Moderately Important</h4>
-                    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
-                        <thead>
-                            <tr class="bg-gray-200">
-                                <th>KPI</th>
-                                <th>Description</th>
-                                <th>Formula</th>
-                                <th>Benchmarks</th>
-                                <th>Insights</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="font-bold">Net Promoter Score (NPS)</td>
-                                <td>Measures customer willingness to recommend.</td>
-                                <td>N/A</td>
-                                <td>E-commerce avg. 30–40; leaders (Amazon) 50+.</td>
-                                <td>Links word-of-mouth with loyalty.</td>
-                            </tr>
-                            <tr class="bg-gray-50">
-                                <td class="font-bold">Customer Satisfaction Score (CSAT)</td>
-                                <td>% of customers satisfied with experience.</td>
-                                <td>$(Satisfied Customers \div Survey Respondents) \times 100$</td>
-                                <td>E-commerce CSAT 75–85%.</td>
-                                <td>Direct but narrow indicator of customer happiness.</td>
-                            </tr>
-                            <tr>
-                                <td class="font-bold">Purchase Frequency</td>
-                                <td>Avg. number of orders per customer in a period.</td>
-                                <td>$Total Orders \div Unique Customers$</td>
-                                <td>U.S. e-commerce avg. 2–4 purchases/year.</td>
-                                <td>Useful for segmenting loyal vs. occasional buyers.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
             </section>
         </div>
     </div>
@@ -1076,6 +985,12 @@
             let disruptiveShareChartInstance;
 
             function showPage(pageId) {
+                // Destroy all charts before switching views
+                if (salesChartInstance) salesChartInstance.destroy();
+                if (marketShareChartInstance) marketShareChartInstance.destroy();
+                if (cacChartInstance) cacChartInstance.destroy();
+                if (disruptiveShareChartInstance) disruptiveShareChartInstance.destroy();
+
                 if (pageId === 'main') {
                     mainReport.style.display = 'block';
                     kpiDashboard.style.display = 'none';
@@ -1096,12 +1011,6 @@
 
             // Draw charts function
             function drawCharts() {
-                // Destroy existing chart instances before creating new ones
-                if (salesChartInstance) salesChartInstance.destroy();
-                if (marketShareChartInstance) marketShareChartInstance.destroy();
-                if (cacChartInstance) cacChartInstance.destroy();
-                if (disruptiveShareChartInstance) disruptiveShareChartInstance.destroy();
-
                 // Chart 1: U.S. E-Commerce Sales Trend
                 const salesCtx = document.getElementById('salesChart').getContext('2d');
                 salesChartInstance = new Chart(salesCtx, {
