@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Analysis & KPI Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .report-section {
+            background-color: #ffffff;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            text-align: left;
+        }
+        th, td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        th {
+            font-weight: 700;
+            color: #374151;
+        }
+        .list-card {
+            background-color: #f9fafb;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #e5e7eb;
+        }
+        .chart-container {
+            position: relative;
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 p-8">
+
+    <div class="max-w-5xl mx-auto">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-extrabold text-gray-900 mb-2">E-Commerce Industry Analysis Report</h1>
+            <p class="text-lg text-gray-600">U.S. Market</p>
+        </header>
+
+        <!-- Navigation Buttons -->
+        <div class="flex justify-center space-x-4 mb-8">
+            <button id="showMainBtn" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-blue-700 transition duration-300">Main Report</button>
+            <button id="showKpiBtn" class="bg-gray-300 text-gray-800 font-bold py-3 px-6 rounded-full shadow-lg hover:bg-gray-400 transition duration-300">KPIs Dashboard</button>
+        </div>
+
+        <!-- Main Report Content -->
+        <div id="mainReport" class="page-content">
+            <!-- Table of Contents -->
+            <section class="report-section" id="table-of-contents">
+                <h2 class="text-2xl font-bold mb-4 text-gray-900">Table of Contents</h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-600">
+                    <li><a href="#executive-summary" class="hover:underline">Executive Summary</a></li>
+                    <li><a href="#industry-overview" class="hover:underline">A. Industry Overview: A Maturing Market</a></li>
+                    <li><a href="#competitive-landscape" class="hover:underline">B. Competitive Landscape & Key Strategies</a></li>
+                    <li><a href="#customer-acquisition" class="hover:underline">C. Customer Acquisition: Channels & Economics</a></li>
+                    <li><a href="#strategic-levers" class="hover:underline">D. Strategic Levers for Growth used by companies</a></li>
+                    <li><a href="#major-challenges" class="hover:underline">E. Major Challenges & Mitigation Strategies in U.S. E-Commerce</a></li>
+                    <li><a href="#global-perspective" class="hover-underline">F. Global Comparative Perspective</a></li>
+                    <li><a href="#disruptive-competitors" class="hover:underline">G. Emerging and Disruptive Competitors</a></li>
+                    <li><a href="#conclusion" class="hover:underline">H. Conclusion & Strategic Outlook for 2025–2026</a></li>
+                </ul>
+            </section>
+
+            <!-- Executive Summary -->
+            <section class="report-section" id="executive-summary">
+                <h2 class="text-2xl font-bold mb-4 text-gray-900">Executive Summary</h2>
+                <p class="text-gray-600">
+                    The U.S. e-commerce market has reached a new phase of mature, sustained growth following the explosive expansion of the pandemic era. With 2024 sales exceeding <b>$1.19 trillion</b>, online channels now represent a foundational <b>16.4%</b> of total retail. Growth, while still positive, is normalizing to a projected <b>5-9%</b> annually, shifting the competitive focus from market-wide tailwinds to strategic execution in logistics, customer experience, and data-driven monetization. Success in the 2025-2026 landscape will be defined by <b>superior omnichannel integration</b>, <b>efficient customer retention</b>, and the ability to navigate <b>rising acquisition costs and logistical complexities</b>.
+                </p>
+            </section>
+
+            <!-- A. Industry Overview: A Maturing Market -->
+            <section class="report-section" id="industry-overview">
+                <h2 class="text-2xl font-bold mb-4 text-gray-900">A. Industry Overview: A Maturing Market</h2>
+                <p class="text-gray-600 mb-6">
+                    The U.S. e-commerce sector remains a powerhouse of retail, though its growth trajectory is evolving from hyper-growth to a more sustainable, competitive expansion.
+                </p>
+
+                <h3 class="text-xl font-bold mb-2 text-gray-900">Market Size & Growth Trends</h3>
+                <div class="space-y-4 text-gray-600">
+                    <div class="list-card">
+                        <h4 class="font-bold text-gray-900 mb-2">2024 Actuals:</h4> U.S. retail e-commerce sales reached <b>~$1.19 trillion</b>, accounting for approximately <b>16.4%</b> of total retail sales. Year-over-Year (YoY) growth was estimated between <b>8.1% - 10.5%</b>.
+                    </div>
+                    <div class="list-card">
+                        <h4 class="font-bold text-gray-900 mb-2">2025 Forecasts & Current Data:</h4>
+                        <ul class="list-disc list-inside ml-4 space-y-1">
+                            <li>Q2 2025 Performance: The U.S. Census Bureau reported <b>$292.9B</b> in quarterly e-commerce sales, representing <b>~15.9%</b> of total retail and YoY growth of <b>~5.3%</b>.</li>
+                            <li>Full-Year 2025 Outlook: Forecasts suggest continued growth, though at a moderated pace, with projections ranging from <b>5.0%</b> (eMarketer) to <b>8.6%</b> (Oberlo), potentially reaching <b>~$1.3 trillion</b>.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-bold mt-8 mb-2 text-gray-900">Table: U.S. E-Commerce Market Growth Snapshot</h3>
+                <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th>Metric</th>
+                            <th>2024 (Actual)</th>
+                            <th>2025 (Projected)</th>
+                            <th>YoY Growth ('24-'25)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white">
+                            <td>Total Sales</td>
+                            <td><b>~$1.19 T</b></td>
+                            <td><b>~$1.30 T</b></td>
+                            <td><b>+5.0% to +8.6%</b></td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td>% of Total Retail</td>
+                            <td><b>~16.4%</b></td>
+                            <td><b>~17.2%</b></td>
+                            <td><b>+ ~0.8 pts</b></td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td>Quarterly Sales (Q2)</td>
+                            <td><b>$278.1B</b> (Q2 '24)</td>
+                            <td><b>$292.9B</b> (Q2 '25)</td>
+                            <td><b>+5.3%</b></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="mt-4 italic text-sm text-gray-500"><b>Interpretation:</b> The market is expanding but maturing. Growth is now driven by structural shifts like marketplace dominance, the rise of D2C brands, and logistics optimization rather than broad digital adoption.</p>
+
+                <div class="report-section mt-8">
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Chart: U.S. E-Commerce Sales Trend</h3>
+                    <div class="chart-container">
+                        <canvas id="salesChart"></canvas>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-bold mt-8 mb-2 text-gray-900">Key Business Models & Market Share</h3>
+                <p class="text-gray-600 mb-4">The competitive landscape is segmented across several models, with marketplaces commanding significant influence.</p>
+                <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th>Model</th>
+                            <th>2024 U.S. Sales Estimate</th>
+                            <th>Key Characteristics & Players</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white">
+                            <td>B2C (Business-to-Consumer)</td>
+                            <td><b>~$1.05 T</b> (<b>88%</b> of e-commerce transactions in the retail)</td>
+                            <td>Dominated by marketplaces. <b>Amazon</b> (<b>37.6%</b> share), <b>Walmart</b> (<b>6.3%</b>), and <b>Apple</b> (<b>3.6%</b>) lead.</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td>D2C (Direct-to-Consumer)</td>
+                            <td><b>~$197B - $213B</b></td>
+                            <td>Brands selling directly online. A key growth vector. Levi's derives <b>48%</b> of net revenue from D2C.</td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td>B2B E-Commerce</td>
+                            <td><b>~$1.48 T</b></td>
+                            <td>A massive, often overlooked segment. Amazon Business (<b>57%</b> adoption) and Walmart Business (<b>39%</b>) are key players.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- B. Competitive Landscape & Key Strategies -->
+            <section class="report-section" id="competitive-landscape">
+                <h2 class="text-2xl font-bold mb-4 text-gray-900">B. Competitive Landscape & Key Strategies</h2>
+                <p class="text-gray-600 mb-6">The market is dominated by a few giants, each pursuing a distinct strategic moat.</p>
+                <div class="space-y-4 text-gray-600">
+                    <div class="list-card">
+                        <h4 class="font-bold text-gray-900">Amazon:</h4> The undisputed leader competes on its vast selection, the logistics advantage of Fulfillment by Amazon (FBA), the loyalty of the Prime ecosystem, and a powerful advertising platform.
+                    </div>
+                    <div class="list-card">
+                        <h4 class="font-bold text-gray-900">Walmart:</h4> Leverages its extensive physical footprint for an omnichannel advantage, emphasizing same-day grocery delivery, in-store pickup, and a growing marketplace.
+                    </div>
+                    <div class="list-card">
+                        <h4 class="font-bold text-gray-900">Shopify:</h4> Powers the long tail of independent and D2C brands. It competes by providing tools that enable brand control and direct customer relationships, countering the commoditization risk of large marketplaces.
+                    </div>
+                </div>
+                <p class="text-gray-600 mt-4">The primary competitive fronts are <b>logistics and fulfillment speed</b>, <b>customer acquisition cost (CAC) efficiency</b>, and <b>monetization through advertising and services</b>.</p>
+
+                <div class="report-section mt-8">
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Chart: Top Competitors by Market Share</h3>
+                    <div class="chart-container">
+                        <canvas id="marketShareChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- C. Customer Acquisition: Channels & Economics -->
+            <section class="report-section" id="customer-acquisition">
+                <h2 class="text-2xl font-bold mb-4 text-gray-900">C. Customer Acquisition: Channels & Economics</h2>
+                <p class="text-gray-600 mb-4">Acquiring customers is increasingly expensive and complex, making channel selection critical.</p>
+                <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th>Channel</th>
+                            <th>Average CAC</th>
+                            <th>Conversion Rate</th>
+                            <th>Primary Use Case</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white">
+                            <td>Marketplace Ads (Amazon/Walmart)</td>
+                            <td><b>$35 – $45</b></td>
+                            <td><b>10% – 15%</b></td>
+                            <td>High-intent, performance-driven sales</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td>Paid Search (Google Shopping)</td>
+                            <td><b>$45 – $55</b></td>
+                            <td><b>3% – 4%</b></td>
+                            <td>Capturing existing demand & intent</td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td>Affiliate / Referral Programs</td>
+                            <td><b>$20 – $30</b></td>
+                            <td><b>2% – 3%</b></td>
+                            <td>Building loyalty & scalable growth</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td>Social Media Ads (FB/IG/TikTok)</td>
+                            <td><b>$70 – $90</b></td>
+                            <td><b>1% – 3%</b> (<b>4–6%</b> retargeting)</td>
+                            <td>Brand building & top-of-funnel awareness</td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td>Email Marketing</td>
+                            <td><b>$10 – $15</b></td>
+                            <td><b>1% – 3%</b> (<b>5–8%</b> engaged)</td>
+                            <td>Retention & repeat purchases (highest ROI)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="mt-4 italic text-sm text-gray-500"><b>Note:</b> The healthy industry benchmark for Customer Lifetime Value (CLV) to CAC ratio is <b>3:1</b>.</p>
+
+                <div class="report-section mt-8">
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Chart: Average Customer Acquisition Cost by Channel</h3>
+                    <div class="chart-container">
+                        <canvas id="cacChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- D. Strategic Levers for Growth used by companies -->
+            <section class="report-section" id="strategic-levers">
+                <h2 class="text-2xl font-bold mb-4 text-gray-900">D. Strategic Levers for Growth used by companies</h2>
+                <div class="space-y-6">
+                    <div class="list-card">
+                        <h3 class="font-bold text-gray-900 mb-2">1. Generous Return Policies to Build Trust</h3>
+                        <p>Leading retailers recognize that flexible returns lower purchase hesitation and build stronger relationships with customers.</p>
+                        <p class="mt-2"><b>Examples:</b> <b>Target & Walmart:</b> Extended return windows to <b>90 days</b> or more for certain categories. Walmart even accepts some opened items if customers are unsatisfied. <b>Zappos:</b> Pioneered <b>365-day</b> free returns, setting a gold standard in e-commerce. <b>IKEA:</b> Offers a <b>365-day</b> return policy, reinforcing its customer-friendly reputation.</p>
+                        <p><b>Why it matters:</b> Reduces risk for online shoppers, especially for higher-value or uncertain purchases.</p>
+                        <p><b>Impact:</b> While logistics and restocking costs increase, conversion rates and customer loyalty improve significantly.</p>
+                    </div>
+                    <div class="list-card">
+                        <h3 class="font-bold text-gray-900 mb-2">2. Membership & Loyalty Ecosystems</h3>
+                        <p>Subscription programs drive repeat purchasing and higher lifetime value (CLV) by locking customers into an ecosystem.</p>
+                        <p class="mt-2"><b>Examples:</b> <b>Amazon Prime:</b> Over <b>250 million</b> members worldwide, with Prime members spending <b>~2.3x more</b> than non-members. <b>Walmart+:</b> Bundles fuel discounts, grocery delivery, and streaming services as a competitive alternative to Prime. <b>Sephora Beauty Insider:</b> Tiered loyalty program with points, exclusive events, and VIP access. <b>Starbucks Rewards:</b> Among the most successful loyalty apps, with personalized offers that drive repeat store visits.</p>
+                        <p><b>Why it matters:</b> Loyalty programs lower long-term CAC, increase retention, and encourage habitual purchasing.</p>
+                    </div>
+                    <div class="list-card">
+                        <h3 class="font-bold text-gray-900 mb-2">3. Personalization & AI-Driven Recommendations</h3>
+                        <p>AI-powered personalization tailors experiences to customer behavior, boosting engagement and sales.</p>
+                        <p class="mt-2"><b>Examples:</b> <b>Amazon:</b> Recommendation engine contributes to <b>~35%</b> of total revenue. <b>Shopify merchants:</b> Use AI plugins for bundling, upselling, and personalized offers. <b>Stitch Fix:</b> Combines AI + human stylists for highly personalized apparel suggestions. <b>Alibaba & eBay:</b> Use Netflix-style algorithms for relevant product recommendations.</p>
+                        <p><b>Why it matters:</b> Personalization drives <b>10–30%</b> additional revenue and improves customer satisfaction through relevance.</p>
+                    </div>
+                    <div class="list-card">
+                        <h3 class="font-bold text-gray-900 mb-2">4. Omnichannel Integration</h3>
+                        <p>Seamless blending of online and offline channels reduces friction and increases convenience.</p>
+                        <p class="mt-2"><b>Examples:</b> <b>Target:</b> Over <b>50%</b> of digital orders fulfilled via BOPIS (Buy Online, Pick Up In Store) or curbside pickup in 2024. <b>Best Buy:</b> Ship-from-store and curbside pickup transformed its customer experience. <b>Apple:</b> Encourages online orders with scheduled in-store pickups, enhancing convenience. <b>Walmart:</b> Testing drone delivery (DroneUp) and automated micro-fulfillment centers.</p>
+                        <p><b>Why it matters:</b> Cuts last-mile delivery costs, improves convenience, and often drives incremental in-store sales.</p>
+                    </div>
+                    <div class="list-card">
+                        <h3 class="font-bold text-gray-900 mb-2">5. Cause-Driven Acquisition (Shop-for-a-Cause Hooks)</h3>
+                        <p>Brands attract first-time customers by linking purchases to social impact, making shopping emotionally meaningful as well as transactional.</p>
+                        <p class="mt-2"><b>Examples:</b> <b>Bombas:</b> Donates a pair of socks to homeless shelters for every pair sold. <b>TOMS:</b> Popularized the “One for One” model, giving a pair of shoes for each purchased. <b>Warby Parker:</b> Supports global vision initiatives by donating glasses to communities in need.</p>
+                        <p><b>Why it matters:</b> Many U.S. shoppers, especially <b>Gen Z</b> and <b>Millennials</b>, prefer brands aligned with their personal values. This approach lowers acquisition barriers by turning the first purchase into both a product decision and a purpose-driven act.</p>
+                    </div>
+                    <div class="list-card">
+                        <h3 class="font-bold text-gray-900 mb-2">6. Mystery Drops & Surprise Boxes for First-Timers</h3>
+                        <p>Offering curated surprise boxes or limited-edition drops creates excitement and adds perceived value for new customers.</p>
+                        <p class="mt-2"><b>Examples:</b> <b>Ipsy:</b> Attracts first-time beauty shoppers with low-cost monthly mystery “Glam Bags.” <b>FabFitFun:</b> Uses seasonal surprise boxes filled with trending products to convert trial customers. <b>BarkBox:</b> Introduces pet owners with themed mystery boxes, encouraging repeat subscriptions.</p>
+                        <p><b>Why it matters:</b> Mystery and surprise tap into human curiosity and perceived value. This strategy reduces decision friction for hesitant shoppers while creating a playful, engaging first-purchase experience.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- E. Major Challenges & Mitigation Strategies in U.S. E-Commerce -->
+            <section class="report-section" id="major-challenges">
+                <h2 class="text-2xl font-bold mb-4 text-gray-900">E. Major Challenges & Mitigation Strategies in U.S. E-Commerce</h2>
+                <div class="space-y-6">
+                    <div class="list-card">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">1. Problems Companies Face</h3>
+                        <ul class="list-none space-y-4 text-gray-600">
+                            <li>
+                                <h4 class="font-bold text-gray-900">High Customer Acquisition Costs (CAC)</h4>
+                                <p class="text-sm">Average CAC in U.S. e-commerce is <b>$60–$80</b> per new customer (Shopify, 2024). Rising ad prices on Google, Meta, and TikTok increase pressure on margins.</p>
+                                <p class="text-sm italic"><b>Mitigation:</b> Adopt loyalty programs, referral systems, and invest in SEO.</p>
+                            </li>
+                            <li>
+                                <h4 class="font-bold text-gray-900">Logistics & Fulfillment Costs</h4>
+                                <p class="text-sm">Consumers expect <b>2-day</b> or faster shipping; last-mile delivery is expensive. Returns add <b>~20%</b> extra logistics costs (McKinsey, 2023).</p>
+                                <p class="text-sm italic"><b>Mitigation:</b> Use omnichannel fulfillment (e.g., Target fulfilling <b>50%+</b> online orders via stores) and invest in automation/AI-driven routing.</p>
+                            </li>
+                            <li>
+                                <h4 class="font-bold text-gray-900">Fraud & Chargebacks</h4>
+                                <p class="text-sm">E-commerce fraud losses reached <b>$12.5 billion</b> in 2023 (Juniper Research). Identity theft, payment fraud, and promo abuse are growing.</p>
+                                <p class="text-sm italic"><b>Mitigation:</b> Use fraud detection AI, multi-factor authentication, and real-time transaction scoring.</p>
+                            </li>
+                            <li>
+                                <h4 class="font-bold text-gray-900">Price Competition & Margin Pressure</h4>
+                                <p class="text-sm">Amazon’s scale pushes prices down across categories. Smaller D2C brands often operate at negative margins in early years.</p>
+                                <p class="text-sm italic"><b>Mitigation:</b> Brands differentiate through niche positioning, subscriptions, or bundling to increase AOV.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list-card">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">2. Problems Customers Face</h3>
+                        <ul class="list-none space-y-4 text-gray-600">
+                            <li>
+                                <h4 class="font-bold text-gray-900">Delivery Delays & Inconsistent Fulfillment</h4>
+                                <p class="text-sm">While Amazon sets the bar at <b>1–2 days</b>, many retailers average <b>3–5 days</b>. Customers abandon retailers after repeated late deliveries.</p>
+                                <p class="text-sm italic"><b>Mitigation:</b> Provide clearer delivery promises, SMS/email tracking, and BOPIS.</p>
+                            </li>
+                            <li>
+                                <h4 class="font-bold text-gray-900">Complex Returns Process</h4>
+                                <p class="text-sm"><b>60%</b> of U.S. shoppers check return policy before buying (Baymard Institute). Inconvenient returns reduce repeat purchase likelihood.</p>
+                                <p class="text-sm italic"><b>Mitigation:</b> Offer “no-questions-asked” extended returns and use drop-off locations.</p>
+                            </li>
+                            <li>
+                                <h4 class="font-bold text-gray-900">Fraud Targeting Customers</h4>
+                                <p class="text-sm">Fake websites, phishing, and account takeovers are common. Over <b>16%</b> of U.S. consumers experienced online fraud in 2023 (FTC).</p>
+                                <p class="text-sm italic"><b>Mitigation:</b> Retailers provide 2FA, fraud alerts, and customer education.</p>
+                            </li>
+                            <li>
+                                <h4 class="font-bold text-gray-900">Overwhelming Choice & Cart Abandonment</h4>
+                                <p class="text-sm">Avg. cart abandonment is <b>~70%</b> globally. Causes: unexpected shipping costs, forced account creation, long checkouts.</p>
+                                <p class="text-sm italic"><b>Mitigation:</b> Implement one-click checkout, transparent pricing, and guest checkout.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list-card">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">3. Potential External Impacts</h3>
+                        <ul class="list-none space-y-4 text-gray-600">
+                            <li>
+                                <h4 class="font-bold text-gray-900">Antitrust Scrutiny</h4>
+                                <p class="text-sm">Regulators are investigating <b>Amazon, Google, and Meta</b> for dominance in retail and advertising. Potential outcomes: restrictions on self-preferencing, higher compliance costs, or forced changes in marketplace rules.</p>
+                                <p class="text-sm italic"><b>Impact:</b> Could level playing field for smaller e-commerce players, but may reduce short-term efficiency for consumers.</p>
+                            </li>
+                            <li>
+                                <h4 class="font-bold text-gray-900">Data Privacy Regulations</h4>
+                                <p class="text-sm">State-level laws like <b>California Consumer Privacy Act (CCPA)</b> and <b>Virginia Consumer Data Protection Act</b> restrict how companies collect and use data.</p>
+                                <p class="text-sm italic"><b>Impact:</b> Higher compliance costs, limits on personalized advertising, and potential revenue decline for small retailers relying on retargeting.</p>
+                            </li>
+                            <li>
+                                <h4 class="font-bold text-gray-900">Economic Downturns & Inflation</h4>
+                                <p class="text-sm">Consumer spending slows when disposable income shrinks. In 2023–24, inflation caused many shoppers to trade down to cheaper brands or delay purchases.</p>
+                                <p class="text-sm italic"><b>Impact:</b> Lower AOV, higher price sensitivity, and slower growth across discretionary categories.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-bold mt-8 mb-4 text-gray-900">Summary Table: Major Challenges & Mitigation Strategies</h3>
+                <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th>Problem</th>
+                            <th>Scale of Impact</th>
+                            <th>Recommended Mitigation Strategies</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white"><td><b>High Customer Acquisition Costs (CAC)</b></td><td><b>$60–$80</b> per customer on average; rising digital ad costs</td><td>Loyalty programs, referral systems, SEO/organic traffic focus</td></tr>
+                        <tr class="bg-gray-50"><td><b>Logistics & Fulfillment Costs</b></td><td><b>20–30%</b> of order value tied to shipping & returns</td><td>Omnichannel fulfillment (e.g., store pickup), automation, AI-driven routing</td></tr>
+                        <tr class="bg-white"><td><b>Fraud & Chargebacks</b></td><td><b>$12.5B</b> losses in 2023 (U.S.)</td><td>Fraud detection AI, multi-factor authentication, transaction scoring</td></tr>
+                        <tr class="bg-gray-50"><td><b>Price Competition & Margin Pressure</b></td><td>Low/negative margins, especially for D2C startups</td><td>Niche positioning, subscriptions, bundling, social mission branding</td></tr>
+                        <tr class="bg-white"><td><b>Delivery Delays (Customer)</b></td><td>Up to <b>40%</b> churn after repeated late deliveries</td><td>Clear delivery promises, real-time tracking, BOPIS (buy online, pick up in store)</td></tr>
+                        <tr class="bg-gray-50"><td><b>Complex Returns Process</b></td><td><b>60%</b> of shoppers check return policy before purchase</td><td>Free/in-store returns, extended windows, partnerships (e.g., Amazon–Kohl’s)</td></tr>
+                        <tr class="bg-white"><td><b>Fraud Targeting Customers</b></td><td><b>16%</b> of U.S. consumers affected in 2023</td><td>Two-factor authentication, fraud alerts, customer education</td></tr>
+                        <tr class="bg-gray-50"><td><b>Overwhelming Choice & Cart Abandonment</b></td><td><b>~70%</b> global abandonment rate</td><td>One-click checkout, guest checkout, transparent shipping costs</td></tr>
+                        <tr class="bg-white"><td><b>Antitrust Scrutiny</b></td><td>Potential restructuring of Amazon/Google dominance</td><td>Adjust marketplace rules, diversify traffic channels, compliance readiness</td></tr>
+                        <tr class="bg-gray-50"><td><b>Data Privacy Regulations (e.g., CCPA, state laws)</b></td><td>Limits on retargeting & personalization</td><td>Invest in first-party data, transparent consent systems, compliance automation</td></tr>
+                        <tr class="bg-white"><td><b>Economic Downturn & Inflation</b></td><td>Lower AOV, reduced discretionary spending</td><td>Offer value-based bundles, promotions, flexible payments (BNPL)</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Global Comparative Perspective -->
+            <section class="report-section" id="global-perspective">
+                <h2 class="text-2xl font-bold mb-4 text-gray-900">F. Global Comparative Perspective</h2>
+                <div class="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 text-gray-600">
+                    <div class="list-card flex-1">
+                        <h3 class="font-bold text-gray-900 mb-2">1. United States</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><b>Market Size (2024):</b> <b>~$1.1 trillion</b> in retail e-commerce sales (Statista, 2024).</li>
+                            <li><b>Share of Total Retail:</b> <b>~22%</b> of total U.S. retail.</li>
+                            <li><b>Key Players:</b> <b>Amazon</b> (<b>~37%</b> share), <b>Walmart</b>, <b>eBay</b>, <b>Shopify</b>.</li>
+                            <li><b>Characteristics:</b> Mature, competitive, dominated by marketplaces and omnichannel retailers; high logistics efficiency but rising CAC.</li>
+                        </ul>
+                    </div>
+                    <div class="list-card flex-1">
+                        <h3 class="font-bold text-gray-900 mb-2">2. China</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><b>Market Size (2024):</b> <b>~$2.2 trillion</b> (more than double the U.S.) (eMarketer, 2024).</li>
+                            <li><b>Share of Total Retail:</b> ><b>45%</b> of retail sales — the highest globally.</li>
+                            <li><b>Key Players:</b> <b>Alibaba</b> (Tmall, Taobao), <b>JD.com</b>, <b>Pinduoduo</b>.</li>
+                            <li><b>Characteristics:</b> Mobile-first, live-stream shopping, social commerce dominance, heavy use of super apps (WeChat).</li>
+                            <li><b>Comparison:</b> U.S. lags behind China in social commerce adoption but leads in international logistics networks.</li>
+                        </ul>
+                    </div>
+                    <div class="list-card flex-1">
+                        <h3 class="font-bold text-gray-900 mb-2">3. Europe</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><b>Market Size (2024):</b> <b>~$800 billion</b> (Eurostat, 2024).</li>
+                            <li><b>Share of Total Retail:</b> <b>~16–18%</b>, varies by country (UK leads at <b>~30%</b>).</li>
+                            <li><b>Key Players:</b> <b>Amazon</b> (dominant in UK & Germany), <b>Zalando</b>, <b>Carrefour</b>, <b>Tesco</b>.</li>
+                            <li><b>Characteristics:</b> Diverse regulatory environment, stronger consumer protections, fragmented logistics across borders.</li>
+                            <li><b>Comparison:</b> Europe’s market is smaller and more fragmented than U.S., but consumers report higher trust in data privacy and sustainability-driven brands.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Emerging and Disruptive Competitors -->
+            <section class="report-section" id="disruptive-competitors">
+                <h2 class="text-2xl font-bold mb-4 text-gray-900">G. Emerging and Disruptive Competitors</h2>
+                <p class="text-gray-600 mb-4">While Amazon, Walmart, and Shopify dominate the U.S. e-commerce market, new entrants and disruptive models are rapidly reshaping competition:</p>
+                <div class="space-y-4 text-gray-600">
+                    <div class="list-card">
+                        <h4 class="font-bold text-gray-900">TikTok Shop (Social Commerce):</h4> Launched in the U.S. in 2023, <b>TikTok Shop</b> integrates shopping directly into the social media app, enabling impulse-driven purchases through short-form video. In less than two years, it has surpassed <b>$10 billion in global GMV</b> (2024), threatening traditional discovery and ad-driven e-commerce models by blending entertainment with shopping.
+                    </div>
+                    <div class="list-card">
+                        <h4 class="font-bold text-gray-900">Shein (Ultra-Fast Fashion D2C):</h4> The China-based D2C brand leverages real-time supply chain analytics and influencer-driven marketing to produce and launch thousands of new SKUs per week. With U.S. sales exceeding <b>$30 billion</b> in 2023, <b>Shein</b> has become a major threat to both fast fashion (H&M, Zara) and marketplaces by bypassing traditional retail infrastructure.
+                    </div>
+                    <div class="list-card">
+                        <h4 class="font-bold text-gray-900">The Trade Desk (Retail Media Networks Challenger):</h4> As retailers like <b>Walmart</b>, <b>Amazon</b>, and <b>Kroger</b> expand into retail media, <b>The Trade Desk</b> has emerged as an independent platform offering advertisers access to retail data across multiple partners. This challenges Amazon’s dominance in ad-driven revenue and pressures Walmart Connect and other in-house networks to compete on efficiency and reach.
+                    </div>
+                </div>
+
+                <!-- New Chart for Emerging Competitors Market Share -->
+                <div class="report-section mt-8">
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Chart: Illustrative Growth of TikTok Shop and Shein</h3>
+                    <p class="text-gray-600 mb-4">This line chart illustrates the rapid, hypothetical growth trajectory of TikTok Shop and Shein as they capture U.S. market share over time.</p>
+                    <div class="chart-container">
+                        <canvas id="disruptiveShareChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- F. Conclusion & Strategic Outlook for 2025–2026 -->
+            <section class="report-section" id="conclusion">
+                <h2 class="text-2xl font-bold mb-4 text-gray-900">H. Conclusion & Strategic Outlook for 2025–2026</h2>
+                <p class="text-gray-600 mb-6">The U.S. e-commerce market is entering a period of intensified competition where operational excellence is paramount. Growth will be won, not given. Companies must navigate rising costs, stricter regulations, and shifting consumer behaviors with precision and foresight.</p>
+                <h3 class="text-xl font-bold mb-2 text-gray-900">Key Strategic Imperatives</h3>
+                <ul class="list-none space-y-4 text-gray-600">
+                    <li class="list-card">
+                        <h4 class="font-bold text-gray-900 mb-2">Profitability over Top-Line Growth</h4>
+                        <p>With rising CAC and logistical costs, winners will prioritize margin protection over pure scale. Profitability will hinge on increasing CLV through loyalty programs, retention strategies, and reducing return/refund leakage.</p>
+                    </li>
+                    <li class="list-card">
+                        <h4 class="font-bold text-gray-900 mb-2">The Omnichannel Imperative</h4>
+                        <p>The seamless blending of digital and physical retail will become non-negotiable. Models like BOPIS (Buy Online, Pick Up In Store), curbside pickup, and same-day delivery will expand. Companies that truly integrate supply chain, stores, and digital platforms will win on both cost and convenience.</p>
+                    </li>
+                    <li class="list-card">
+                        <h4 class="font-bold text-gray-900 mb-2">AI as a Core Competency</h4>
+                        <p>AI is evolving from a recommendation tool into the central nervous system of e-commerce. By 2026, leaders will leverage AI for: Dynamic Pricing & Revenue Optimization, Fraud Prevention, Inventory & Logistics Automation, and Personalized Marketing. Companies that fail to build AI capabilities risk being structurally disadvantaged.</p>
+                    </li>
+                    <li class="list-card">
+                        <h4 class="font-bold text-gray-900 mb-2">Technology as an Infrastructure Advantage</h4>
+                        <p>Cloud-native commerce platforms (Shopify, BigCommerce, Salesforce Commerce Cloud) will dominate for scalability. Headless commerce & composable architectures will gain traction, enabling brands to innovate faster on the front-end while optimizing back-end costs. AR/VR shopping will become more mainstream in categories like fashion, furniture, and beauty, reducing returns and boosting confidence in online purchases. Voice commerce and chat-based commerce will expand as consumers seek frictionless shopping experiences.</p>
+                    </li>
+                    <li class="list-card">
+                        <h4 class="font-bold text-gray-900 mb-2">Trust as a Competitive Moat</h4>
+                        <p>In a market rife with fraud, fake reviews, and privacy concerns, trust will differentiate winners from laggards. Retailers that prioritize data security, transparent pricing, ethical sourcing, and customer-first policies will create loyalty that ads alone cannot buy.</p>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- KPI Dashboard Content -->
+        <div id="kpiDashboard" class="page-content" style="display: none;">
+            <!-- I. Key Performance Indicators (KPIs) -->
+            <section class="report-section">
+                <h2 class="text-2xl font-bold mb-4 text-gray-900">Key Performance Indicators (KPIs)</h2>
+                <p class="text-gray-600 mb-4">This dashboard outlines the key performance indicators used to analyze the health and growth of an e-commerce business. They are broken down by category for clarity and strategic alignment.</p>
+
+                <!-- 1. Traffic & Acquisition KPIs -->
+                <div class="my-8">
+                    <h3 class="text-xl font-bold mt-8 mb-4 text-gray-900">1. Traffic & Acquisition KPIs</h3>
+
+                    <h4 class="text-lg font-bold mb-2 text-gray-800">Most Important</h4>
+                    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th>KPI</th>
+                                <th>Description</th>
+                                <th>Formula</th>
+                                <th>Benchmarks</th>
+                                <th>Insights</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-bold">Conversion Rate (CVR)</td>
+                                <td>% of website visitors who complete a purchase.</td>
+                                <td>$(Number of Orders \div Website Visitors) \times 100$</td>
+                                <td>U.S. e-commerce avg. 2–3%, top performers can hit 5–7%.</td>
+                                <td>Shows how efficient your site is at turning traffic into revenue.</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="font-bold">Customer Acquisition Cost (CAC)</td>
+                                <td>Average cost of acquiring a new customer.</td>
+                                <td>$(Total Marketing + Sales Spend \div New Customers Acquired)$</td>
+                                <td>U.S. e-commerce CAC ranges $45–$70 (2024).</td>
+                                <td>Essential for profitability. Too high CAC means unsustainable growth.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">Cost per Acquisition (CPA)</td>
+                                <td>Ad cost to acquire one customer through a specific channel.</td>
+                                <td>$Ad Spend \div Conversions$</td>
+                                <td>Google Ads CPA (retail): $45–$55; Facebook Ads CPA: $25–$40.</td>
+                                <td>Helps optimize marketing spend by channel.</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="font-bold">Return on Ad Spend (ROAS)</td>
+                                <td>Revenue generated for every $1 spent on ads.</td>
+                                <td>$Revenue from Ads \div Ad Spend$</td>
+                                <td>E-commerce ROAS average 4:1.</td>
+                                <td>Core efficiency KPI for marketing. Low ROAS = wasted ad budget.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">Impressions / Reach</td>
+                                <td>Total times ads/content are displayed and unique users reached.</td>
+                                <td>N/A</td>
+                                <td>Highly channel-dependent. Facebook/Instagram CPM averages $10–$14.</td>
+                                <td>Key for top-of-funnel awareness.</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="font-bold">Cost per Mille (CPM)</td>
+                                <td>Ad cost per 1,000 impressions.</td>
+                                <td>$(Ad Spend \div Impressions) \times 1,000$</td>
+                                <td>U.S. retail CPM averages $8–$12 (Meta, Google).</td>
+                                <td>Useful for measuring awareness campaigns.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4 class="text-lg font-bold mb-2 text-gray-800">Moderately Important</h4>
+                    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th>KPI</th>
+                                <th>Description</th>
+                                <th>Formula</th>
+                                <th>Benchmarks</th>
+                                <th>Insights</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-bold">Website Traffic</td>
+                                <td>Total number of visitors in a given time.</td>
+                                <td>N/A</td>
+                                <td>Depends on brand size. Small D2C: 50k-100k/month.</td>
+                                <td>Visibility metric, but must be paired with CVR to show value.</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="font-bold">Traffic by Channel</td>
+                                <td>Breakdown of visitors by acquisition source.</td>
+                                <td>N/A</td>
+                                <td>Retail avg. 2024: Organic (40%), Paid (25%), Social (15%).</td>
+                                <td>Helps allocate budget and resources to the best-performing channels.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">Click-Through Rate (CTR)</td>
+                                <td>% of people who click on an ad or email link.</td>
+                                <td>$(Clicks \div Impressions) \times 100$</td>
+                                <td>E-commerce display ads CTR avg. 0.6–1%; search ads CTR avg. 2–3%.</td>
+                                <td>Good for diagnosing ad creative or targeting effectiveness.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4 class="text-lg font-bold mb-2 text-gray-800">Less Important / Supporting</h4>
+                    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th>KPI</th>
+                                <th>Description</th>
+                                <th>Formula</th>
+                                <th>Benchmarks</th>
+                                <th>Insights</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-bold">New vs. Returning Visitors</td>
+                                <td>Ratio of first-time vs. repeat visitors.</td>
+                                <td>N/A</td>
+                                <td>Balanced sites often see 60% new / 40% returning.</td>
+                                <td>Shows loyalty trends — more returning = better retention.</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="font-bold">Cost per Click (CPC)</td>
+                                <td>Average cost paid for each ad click.</td>
+                                <td>$Ad Spend \div Clicks$</td>
+                                <td>Google Search avg. $0.75–$1.25; Social avg. $0.40–$0.80.</td>
+                                <td>Diagnostic. Doesn’t guarantee conversions.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">Unique Visitors</td>
+                                <td>Count of distinct individuals visiting the site.</td>
+                                <td>N/A</td>
+                                <td>Highly variable. Small retailers: 50k+/mo.</td>
+                                <td>Volume indicator. Needs CVR & RPV to translate into revenue insights.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 2. Revenue & Profitability KPIs -->
+                <div class="my-8">
+                    <h3 class="text-xl font-bold mt-8 mb-4 text-gray-900">2. Revenue & Profitability KPIs</h3>
+
+                    <h4 class="text-lg font-bold mb-2 text-gray-800">Most Important</h4>
+                    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th>KPI</th>
+                                <th>Description</th>
+                                <th>Formula</th>
+                                <th>Benchmarks</th>
+                                <th>Insights</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-bold">Revenue</td>
+                                <td>Total money generated from sales in a given period.</td>
+                                <td>$Units Sold \times Price$ or $\sum(All Orders Value)$</td>
+                                <td>U.S. e-commerce revenue was $1.1 trillion in 2023.</td>
+                                <td>Top-line growth measure.</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="font-bold">Conversion Rate (CR)</td>
+                                <td>% of visitors who buy.</td>
+                                <td>$(Orders \div Website Visitors) \times 100$</td>
+                                <td>Avg. U.S. e-commerce CR 2–3%.</td>
+                                <td>Shows site efficiency.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">Customer Lifetime Value (CLV or LTV)</td>
+                                <td>Total revenue expected from a customer.</td>
+                                <td>$AOV \times Purchase Frequency \times Average Lifespan$</td>
+                                <td>D2C CLV typically $200–$1,000.</td>
+                                <td>Critical for assessing sustainability vs. CAC.</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="font-bold">Gross Profit Margin</td>
+                                <td>% of revenue left after subtracting COGS.</td>
+                                <td>$(Revenue – COGS) \div Revenue \times 100$</td>
+                                <td>E-commerce gross margins range 40–60%.</td>
+                                <td>Determines room for marketing, operations, and reinvestment.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">Net Profit Margin</td>
+                                <td>% of revenue left after all expenses.</td>
+                                <td>$(Net Profit \div Revenue) \times 100$</td>
+                                <td>Average U.S. e-commerce net margin 4–10%.</td>
+                                <td>Final measure of sustainability.</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="font-bold">Return on Ad Spend (ROAS)</td>
+                                <td>How much revenue is generated for each $1 spent on ads.</td>
+                                <td>$Revenue from Ads \div Ad Spend$</td>
+                                <td>E-commerce avg. 4:1.</td>
+                                <td>Directly ties marketing spend to revenue outcomes.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">Average Revenue per User (ARPU)</td>
+                                <td>Revenue generated per active user in a given period.</td>
+                                <td>$Total Revenue \div Active Users$</td>
+                                <td>Subscription e-commerce ARPU often $20–$40/month.</td>
+                                <td>Helps evaluate profitability per customer segment.</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="font-bold">Operating Margin</td>
+                                <td>% of revenue left after covering operating expenses.</td>
+                                <td>$Operating Income \div Revenue \times 100$</td>
+                                <td>U.S. online retailers: typically 5–12%.</td>
+                                <td>Shows operational efficiency.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4 class="text-lg font-bold mb-2 text-gray-800">Moderately Important</h4>
+                    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th>KPI</th>
+                                <th>Description</th>
+                                <th>Formula</th>
+                                <th>Benchmarks</th>
+                                <th>Insights</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-bold">Average Order Value (AOV)</td>
+                                <td>Average $ amount per order.</td>
+                                <td>$Revenue \div Number of Orders$</td>
+                                <td>U.S. e-commerce AOV ~$120–$150 (2024).</td>
+                                <td>Higher AOV = better CAC efficiency.</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="font-bold">Revenue per Visitor (RPV)</td>
+                                <td>How much revenue each visitor generates.</td>
+                                <td>$Revenue \div Visitors$</td>
+                                <td>U.S. e-commerce avg. $2–$4 RPV.</td>
+                                <td>Combines CR + AOV into one metric.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">Cart Abandonment Rate</td>
+                                <td>% of users who add items to cart but don’t complete checkout.</td>
+                                <td>$(Abandoned Carts \div Initiated Carts) \times 100$</td>
+                                <td>Global avg. ~70% (Baymard Institute, 2024).</td>
+                                <td>Huge revenue leak.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4 class="text-lg font-bold mb-2 text-gray-800">Less Important / Supporting</h4>
+                    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th>KPI</th>
+                                <th>Description</th>
+                                <th>Formula</th>
+                                <th>Benchmarks</th>
+                                <th>Insights</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-bold">Gross Merchandise Volume (GMV) / Total Sales</td>
+                                <td>Total value of goods sold via a platform.</td>
+                                <td>N/A</td>
+                                <td>Amazon GMV 2023: ~$700B.</td>
+                                <td>Investors like it as a scale indicator.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 3. Website Performance KPIs -->
+                <div class="my-8">
+                    <h3 class="text-xl font-bold mt-8 mb-4 text-gray-900">3. Website Performance KPIs</h3>
+
+                    <h4 class="text-lg font-bold mb-2 text-gray-800">Most Important</h4>
+                    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th>KPI</th>
+                                <th>Description</th>
+                                <th>Formula</th>
+                                <th>Benchmarks</th>
+                                <th>Insights</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-bold">Bounce Rate</td>
+                                <td>% of visitors leaving after one page.</td>
+                                <td>$(Single-Page Sessions \div Total Sessions) \times 100$</td>
+                                <td>E-commerce avg. 40–55%.</td>
+                                <td>Indicates landing page relevance & engagement.</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="font-bold">Cart Abandonment Rate</td>
+                                <td>% of shoppers who add items to cart but don’t purchase.</td>
+                                <td>$(Abandoned Carts \div Initiated Carts) \times 100$</td>
+                                <td>Global avg. ~70% (Baymard, 2024).</td>
+                                <td>Fixing checkout flow directly recaptures lost sales.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">Page Load Time</td>
+                                <td>Time it takes a page to load fully.</td>
+                                <td>N/A</td>
+                                <td>Best practice $<3$ seconds. Each +1s delay reduces conversions ~7%.</td>
+                                <td>Speed impacts SEO ranking & conversion.</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="font-bold">Cart-to-Checkout Rate</td>
+                                <td>% moving from cart to checkout.</td>
+                                <td>$(Checkout Sessions \div Carts Created) \times 100$</td>
+                                <td>Strong performers hit 50–60%.</td>
+                                <td>Shows if cart UX is convincing enough to push buyers forward.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">Checkout Completion Rate</td>
+                                <td>% of checkout sessions that result in purchase.</td>
+                                <td>$(Orders \div Checkout Sessions) \times 100$</td>
+                                <td>Avg. 20–40% depending on friction.</td>
+                                <td>Highlights checkout design/payment issues.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4 class="text-lg font-bold mb-2 text-gray-800">Moderately Important</h4>
+                    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th>KPI</th>
+                                <th>Description</th>
+                                <th>Formula</th>
+                                <th>Benchmarks</th>
+                                <th>Insights</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-bold">Average Session Duration</td>
+                                <td>Avg. time users spend per visit.</td>
+                                <td>N/A</td>
+                                <td>E-commerce sites ~2–4 minutes.</td>
+                                <td>Indicates browsing depth.</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="font-bold">Exit Rate</td>
+                                <td>% of users leaving from a particular page.</td>
+                                <td>$(Page Exits \div Page Views) \times 100$</td>
+                                <td>Vary by page. Product pages often 25–40%.</td>
+                                <td>Useful to spot drop-off points.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4 class="text-lg font-bold mb-2 text-gray-800">Less Important / Supporting</h4>
+                    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th>KPI</th>
+                                <th>Description</th>
+                                <th>Formula</th>
+                                <th>Benchmarks</th>
+                                <th>Insights</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-bold">Pages per Session</td>
+                                <td>Avg. number of pages viewed per visit.</td>
+                                <td>N/A</td>
+                                <td>~3–5 pages/session typical.</td>
+                                <td>Indicates browsing depth.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 4. Customer Metrics KPIs -->
+                <div class="my-8">
+                    <h3 class="text-xl font-bold mt-8 mb-4 text-gray-900">4. Customer Metrics KPIs</h3>
+
+                    <h4 class="text-lg font-bold mb-2 text-gray-800">Most Important</h4>
+                    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th>KPI</th>
+                                <th>Description</th>
+                                <th>Formula</th>
+                                <th>Benchmarks</th>
+                                <th>Insights</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-bold">Repeat Purchase Rate</td>
+                                <td>% of customers buying again.</td>
+                                <td>$(Repeat Customers \div Total Customers) \times 100$</td>
+                                <td>E-commerce avg. ~28%, best-in-class 40%+.</td>
+                                <td>Critical for reducing CAC dependence.</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="font-bold">Customer Churn Rate</td>
+                                <td>% of customers lost in a period.</td>
+                                <td>$(Lost Customers \div Starting Customers) \times 100$</td>
+                                <td>Retail churn often 20–30% annually.</td>
+                                <td>Shows long-term retention problems.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">Return Rate</td>
+                                <td>% of purchased products returned.</td>
+                                <td>$(Returned Orders \div Total Orders) \times 100$</td>
+                                <td>E-commerce avg. 15–20%, fashion up to 30–40%.</td>
+                                <td>Impacts margins, logistics, and fraud risk.</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="font-bold">Customer Lifetime Value (CLV / LTV)</td>
+                                <td>Total value a customer brings during their relationship.</td>
+                                <td>$AOV \times Purchase Frequency \times Customer Lifespan$</td>
+                                <td>Many D2C brands $200–$1,000+.</td>
+                                <td>Links directly with CAC — core profitability test.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">Customer Retention Rate (CRR)</td>
+                                <td>% of customers who stay active over time.</td>
+                                <td>$((Customers End – New Customers) \div Customers Start) \times 100$</td>
+                                <td>Healthy e-commerce CRR = ~30–40% annually.</td>
+                                <td>Stronger CRR reduces dependency on expensive acquisition.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4 class="text-lg font-bold mb-2 text-gray-800">Moderately Important</h4>
+                    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th>KPI</th>
+                                <th>Description</th>
+                                <th>Formula</th>
+                                <th>Benchmarks</th>
+                                <th>Insights</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-bold">Net Promoter Score (NPS)</td>
+                                <td>Measures customer willingness to recommend.</td>
+                                <td>N/A</td>
+                                <td>E-commerce avg. 30–40; leaders (Amazon) 50+.</td>
+                                <td>Links word-of-mouth with loyalty.</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="font-bold">Customer Satisfaction Score (CSAT)</td>
+                                <td>% of customers satisfied with experience.</td>
+                                <td>$(Satisfied Customers \div Survey Respondents) \times 100$</td>
+                                <td>E-commerce CSAT 75–85%.</td>
+                                <td>Direct but narrow indicator of customer happiness.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">Purchase Frequency</td>
+                                <td>Avg. number of orders per customer in a period.</td>
+                                <td>$Total Orders \div Unique Customers$</td>
+                                <td>U.S. e-commerce avg. 2–4 purchases/year.</td>
+                                <td>Useful for segmenting loyal vs. occasional buyers.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 4. Customer Metrics KPIs -->
+                <div class="my-8">
+                    <h3 class="text-xl font-bold mt-8 mb-4 text-gray-900">4. Customer Metrics KPIs</h3>
+
+                    <h4 class="text-lg font-bold mb-2 text-gray-800">Most Important</h4>
+                    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th>KPI</th>
+                                <th>Description</th>
+                                <th>Formula</th>
+                                <th>Benchmarks</th>
+                                <th>Insights</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-bold">Repeat Purchase Rate</td>
+                                <td>% of customers buying again.</td>
+                                <td>$(Repeat Customers \div Total Customers) \times 100$</td>
+                                <td>E-commerce avg. ~28%, best-in-class 40%+.</td>
+                                <td>Critical for reducing CAC dependence.</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="font-bold">Customer Churn Rate</td>
+                                <td>% of customers lost in a period.</td>
+                                <td>$(Lost Customers \div Starting Customers) \times 100$</td>
+                                <td>Retail churn often 20–30% annually.</td>
+                                <td>Shows long-term retention problems.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">Return Rate</td>
+                                <td>% of purchased products returned.</td>
+                                <td>$(Returned Orders \div Total Orders) \times 100$</td>
+                                <td>E-commerce avg. 15–20%, fashion up to 30–40%.</td>
+                                <td>Impacts margins, logistics, and fraud risk.</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="font-bold">Customer Lifetime Value (CLV / LTV)</td>
+                                <td>Total value a customer brings during their relationship.</td>
+                                <td>$AOV \times Purchase Frequency \times Customer Lifespan$</td>
+                                <td>Many D2C brands $200–$1,000+.</td>
+                                <td>Links directly with CAC — core profitability test.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">Customer Retention Rate (CRR)</td>
+                                <td>% of customers who stay active over time.</td>
+                                <td>$((Customers End – New Customers) \div Customers Start) \times 100$</td>
+                                <td>Healthy e-commerce CRR = ~30–40% annually.</td>
+                                <td>Stronger CRR reduces dependency on expensive acquisition.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4 class="text-lg font-bold mb-2 text-gray-800">Moderately Important</h4>
+                    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th>KPI</th>
+                                <th>Description</th>
+                                <th>Formula</th>
+                                <th>Benchmarks</th>
+                                <th>Insights</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-bold">Net Promoter Score (NPS)</td>
+                                <td>Measures customer willingness to recommend.</td>
+                                <td>N/A</td>
+                                <td>E-commerce avg. 30–40; leaders (Amazon) 50+.</td>
+                                <td>Links word-of-mouth with loyalty.</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="font-bold">Customer Satisfaction Score (CSAT)</td>
+                                <td>% of customers satisfied with experience.</td>
+                                <td>$(Satisfied Customers \div Survey Respondents) \times 100$</td>
+                                <td>E-commerce CSAT 75–85%.</td>
+                                <td>Direct but narrow indicator of customer happiness.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">Purchase Frequency</td>
+                                <td>Avg. number of orders per customer in a period.</td>
+                                <td>$Total Orders \div Unique Customers$</td>
+                                <td>U.S. e-commerce avg. 2–4 purchases/year.</td>
+                                <td>Useful for segmenting loyal vs. occasional buyers.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const mainReport = document.getElementById('mainReport');
+            const kpiDashboard = document.getElementById('kpiDashboard');
+            const showMainBtn = document.getElementById('showMainBtn');
+            const showKpiBtn = document.getElementById('showKpiBtn');
+
+            // Variables to hold chart instances
+            let salesChartInstance;
+            let marketShareChartInstance;
+            let cacChartInstance;
+            let disruptiveShareChartInstance;
+
+            function showPage(pageId) {
+                if (pageId === 'main') {
+                    mainReport.style.display = 'block';
+                    kpiDashboard.style.display = 'none';
+                    showMainBtn.classList.add('bg-blue-600', 'text-white');
+                    showMainBtn.classList.remove('bg-gray-300', 'text-gray-800');
+                    showKpiBtn.classList.add('bg-gray-300', 'text-gray-800');
+                    showKpiBtn.classList.remove('bg-blue-600', 'text-white');
+                    drawCharts();
+                } else {
+                    mainReport.style.display = 'none';
+                    kpiDashboard.style.display = 'block';
+                    showKpiBtn.classList.add('bg-blue-600', 'text-white');
+                    showKpiBtn.classList.remove('bg-gray-300', 'text-gray-800');
+                    showMainBtn.classList.add('bg-gray-300', 'text-gray-800');
+                    showMainBtn.classList.remove('bg-blue-600', 'text-white');
+                }
+            }
+
+            // Draw charts function
+            function drawCharts() {
+                // Destroy existing chart instances before creating new ones
+                if (salesChartInstance) salesChartInstance.destroy();
+                if (marketShareChartInstance) marketShareChartInstance.destroy();
+                if (cacChartInstance) cacChartInstance.destroy();
+                if (disruptiveShareChartInstance) disruptiveShareChartInstance.destroy();
+
+                // Chart 1: U.S. E-Commerce Sales Trend
+                const salesCtx = document.getElementById('salesChart').getContext('2d');
+                salesChartInstance = new Chart(salesCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['2019', '2020', '2021', '2022', '2023', '2024', '2025 (Proj.)'],
+                        datasets: [{
+                            label: 'U.S. E-Commerce Sales (Trillions $)',
+                            data: [0.6, 0.76, 0.87, 1.04, 1.1, 1.19, 1.3],
+                            backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                            borderColor: 'rgba(59, 130, 246, 1)',
+                            borderWidth: 2,
+                            tension: 0.4,
+                            fill: true,
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Sales (Trillions $)',
+                                },
+                            },
+                        },
+                        plugins: {
+                            legend: {
+                                display: false,
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return context.dataset.label + ': $' + context.parsed.y + 'T';
+                                    }
+                                }
+                            },
+                        }
+                    }
+                });
+
+                // Chart 2: Top Competitors by Market Share
+                const marketShareCtx = document.getElementById('marketShareChart').getContext('2d');
+                marketShareChartInstance = new Chart(marketShareCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Amazon', 'Walmart', 'Apple', 'Others'],
+                        datasets: [{
+                            label: 'Market Share (%)',
+                            data: [37.6, 6.3, 3.6, 52.5],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.7)',
+                                'rgba(54, 162, 235, 0.7)',
+                                'rgba(255, 206, 86, 0.7)',
+                                'rgba(75, 192, 192, 0.7)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Market Share (%)',
+                                },
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false,
+                            },
+                        }
+                    }
+                });
+
+                // Chart 3: Customer Acquisition Cost (CAC) by Channel
+                const cacCtx = document.getElementById('cacChart').getContext('2d');
+                cacChartInstance = new Chart(cacCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Email Marketing', 'Affiliate / Referral', 'Marketplace Ads', 'Paid Search', 'Social Media Ads'],
+                        datasets: [{
+                            label: 'Average CAC ($)',
+                            data: [12.5, 25, 40, 50, 80],
+                            backgroundColor: [
+                                'rgba(153, 102, 255, 0.7)',
+                                'rgba(255, 159, 64, 0.7)',
+                                'rgba(54, 162, 235, 0.7)',
+                                'rgba(255, 99, 132, 0.7)',
+                                'rgba(75, 192, 192, 0.7)'
+                            ],
+                            borderColor: [
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(75, 192, 192, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Average CAC ($)',
+                                },
+                            },
+                        },
+                        plugins: {
+                            legend: {
+                                display: false,
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return context.dataset.label + ': $' + context.parsed.y;
+                                    }
+                                }
+                            },
+                        }
+                    }
+                });
+
+                // New Chart for Emerging Competitors Market Share
+                const disruptiveShareCtx = document.getElementById('disruptiveShareChart').getContext('2d');
+                disruptiveShareChartInstance = new Chart(disruptiveShareCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['2022', '2023', '2024', '2025 (Proj.)'],
+                        datasets: [{
+                            label: 'TikTok Shop',
+                            data: [0.5, 1.2, 3.5, 6.0],
+                            borderColor: 'rgba(0, 0, 0, 1)',
+                            backgroundColor: 'rgba(0, 0, 0, 0.2)',
+                            tension: 0.4,
+                            fill: false
+                        }, {
+                            label: 'Shein',
+                            data: [1.8, 3.0, 5.5, 8.0],
+                            borderColor: 'rgba(235, 52, 52, 1)',
+                            backgroundColor: 'rgba(235, 52, 52, 0.2)',
+                            tension: 0.4,
+                            fill: false
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Illustrative Market Share (%)',
+                                }
+                            },
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Year',
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return context.dataset.label + ': ' + context.parsed.y + '%';
+                                    }
+                                }
+                            },
+                        }
+                    }
+                });
+            }
+
+            // Event Listeners for buttons
+            showMainBtn.addEventListener('click', () => showPage('main'));
+            showKpiBtn.addEventListener('click', () => showPage('kpi'));
+
+            // Initial view
+            showPage('main');
+        });
+    </script>
+
+</body>
+</html>
