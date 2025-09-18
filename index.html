@@ -516,50 +516,57 @@
                                 <th>Formula</th>
                                 <th>Benchmarks</th>
                                 <th>Insights</th>
+                                <th>Can be Calculated?</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td class="font-bold">Conversion Rate (CVR)</td>
                                 <td>% of website visitors who complete a purchase.</td>
-                                <td>$(Number of Orders \div Website Visitors) \times 100$</td>
-                                <td>U.S. e-commerce avg. 2–3%, top performers can hit 5–7%.</td>
-                                <td>Shows how efficient your site is at turning traffic into revenue.</td>
+                                <td>(Number of Orders ÷ Website Visitors) × 100</td>
+                                <td>U.S. e-commerce avg. 2–3%, top performers 5–7%.</td>
+                                <td>Shows how well traffic is converted into revenue.</td>
+                                <td>Yes.</td>
                             </tr>
                             <tr class="bg-gray-50">
                                 <td class="font-bold">Customer Acquisition Cost (CAC)</td>
                                 <td>Average cost of acquiring a new customer.</td>
-                                <td>$(Total Marketing + Sales Spend \div New Customers Acquired)$</td>
-                                <td>U.S. e-commerce CAC ranges $45–$70 (2024).</td>
-                                <td>Essential for profitability. Too high CAC means unsustainable growth.</td>
+                                <td>(Total Marketing Spend + Sales Spend) ÷ New Customers Acquired</td>
+                                <td>U.S. e-commerce avg. $45–$70 (2024).</td>
+                                <td>Critical for profitability. High CAC = unsustainable growth.</td>
+                                <td>No</td>
                             </tr>
                             <tr>
                                 <td class="font-bold">Cost per Acquisition (CPA)</td>
-                                <td>Ad cost to acquire one customer through a specific channel.</td>
-                                <td>$Ad Spend \div Conversions$</td>
-                                <td>Google Ads CPA (retail): $45–$55; Facebook Ads CPA: $25–$40.</td>
-                                <td>Helps optimize marketing spend by channel.</td>
+                                <td>Ad cost to acquire one customer via a channel.</td>
+                                <td>Ad Spend ÷ Conversions</td>
+                                <td>Google Ads: $45–$55; Facebook Ads: $25–$40.</td>
+                                <td>Helps optimize ad spend by channel.</td>
+                                <td>No</td>
                             </tr>
                             <tr class="bg-gray-50">
                                 <td class="font-bold">Return on Ad Spend (ROAS)</td>
                                 <td>Revenue generated for every $1 spent on ads.</td>
-                                <td>$Revenue from Ads \div Ad Spend$</td>
-                                <td>E-commerce ROAS average 4:1.</td>
-                                <td>Core efficiency KPI for marketing. Low ROAS = wasted ad budget.</td>
+                                <td>Revenue from Ads ÷ Ad Spend</td>
+                                <td>E-commerce avg. 4:1.</td>
+                                <td>Core efficiency KPI. Low ROAS = wasted ad budget.</td>
+                                <td>No</td>
                             </tr>
                             <tr>
                                 <td class="font-bold">Impressions / Reach</td>
-                                <td>Total times ads/content are displayed and unique users reached.</td>
-                                <td>N/A</td>
-                                <td>Highly channel-dependent. Facebook/Instagram CPM averages $10–$14.</td>
-                                <td>Key for top-of-funnel awareness.</td>
+                                <td>Times ads are displayed & unique users reached.</td>
+                                <td>Sum of Impressions and Count of Unique Reached Users</td>
+                                <td>Facebook/Instagram CPM avg. $10–$14.</td>
+                                <td>Top-of-funnel awareness KPI.</td>
+                                <td>No</td>
                             </tr>
                             <tr class="bg-gray-50">
                                 <td class="font-bold">Cost per Mille (CPM)</td>
                                 <td>Ad cost per 1,000 impressions.</td>
-                                <td>$(Ad Spend \div Impressions) \times 1,000$</td>
-                                <td>U.S. retail CPM averages $8–$12 (Meta, Google).</td>
-                                <td>Useful for measuring awareness campaigns.</td>
+                                <td>(Ad Spend ÷ Impressions) × 1,000</td>
+                                <td>U.S. retail avg. $8–$12 (Meta, Google).</td>
+                                <td>Key for awareness campaign efficiency.</td>
+                                <td>No</td>
                             </tr>
                         </tbody>
                     </table>
@@ -573,29 +580,33 @@
                                 <th>Formula</th>
                                 <th>Benchmarks</th>
                                 <th>Insights</th>
+                                <th>Can be Calculated?</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td class="font-bold">Website Traffic</td>
-                                <td>Total number of visitors in a given time.</td>
-                                <td>N/A</td>
+                                <td>Total visitors in a given period.</td>
+                                <td>Count of Website Visitors (Sessions or Unique Users)</td>
                                 <td>Depends on brand size. Small D2C: 50k-100k/month.</td>
-                                <td>Visibility metric, but must be paired with CVR to show value.</td>
+                                <td>Visibility metric. Needs CVR context.</td>
+                                <td>Yes.</td>
                             </tr>
                             <tr class="bg-gray-50">
                                 <td class="font-bold">Traffic by Channel</td>
-                                <td>Breakdown of visitors by acquisition source.</td>
-                                <td>N/A</td>
+                                <td>Visitors split by acquisition source.</td>
+                                <td>Visitors Grouped by Source / Medium / Campaign</td>
                                 <td>Retail avg. 2024: Organic (40%), Paid (25%), Social (15%).</td>
                                 <td>Helps allocate budget and resources to the best-performing channels.</td>
+                                <td>Yes</td>
                             </tr>
                             <tr>
                                 <td class="font-bold">Click-Through Rate (CTR)</td>
-                                <td>% of people who click on an ad or email link.</td>
-                                <td>$(Clicks \div Impressions) \times 100$</td>
-                                <td>E-commerce display ads CTR avg. 0.6–1%; search ads CTR avg. 2–3%.</td>
-                                <td>Good for diagnosing ad creative or targeting effectiveness.</td>
+                                <td>% of people clicking an ad/email link.</td>
+                                <td>(Clicks ÷ Impressions) × 100</td>
+                                <td>Display Ads: 0.6–1%; Search Ads: 2–3%.</td>
+                                <td>Diagnoses ad creative or targeting quality.</td>
+                                <td>No</td>
                             </tr>
                         </tbody>
                     </table>
@@ -609,367 +620,389 @@
                                 <th>Formula</th>
                                 <th>Benchmarks</th>
                                 <th>Insights</th>
+                                <th>Can be Calculated?</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td class="font-bold">New vs. Returning Visitors</td>
                                 <td>Ratio of first-time vs. repeat visitors.</td>
-                                <td>N/A</td>
-                                <td>Balanced sites often see 60% new / 40% returning.</td>
-                                <td>Shows loyalty trends — more returning = better retention.</td>
+                                <td>(New Visitors ÷ Total Visitors) vs (Returning Visitors ÷ Total Visitors)</td>
+                                <td>Balanced sites: 60% new / 40% returning.</td>
+                                <td>Loyalty indicator. More returning = better retention.</td>
+                                <td>Yes</td>
                             </tr>
                             <tr class="bg-gray-50">
                                 <td class="font-bold">Cost per Click (CPC)</td>
-                                <td>Average cost paid for each ad click.</td>
-                                <td>$Ad Spend \div Clicks$</td>
-                                <td>Google Search avg. $0.75–$1.25; Social avg. $0.40–$0.80.</td>
-                                <td>Diagnostic. Doesn’t guarantee conversions.</td>
+                                <td>Average cost per ad click.</td>
+                                <td>Ad Spend ÷ Clicks</td>
+                                <td>Google Search: $0.75–$1.25; Social: $0.40–$0.80.</td>
+                                <td>Diagnostic — doesn’t ensure conversions.</td>
+                                <td>No</td>
                             </tr>
                             <tr>
                                 <td class="font-bold">Unique Visitors</td>
-                                <td>Count of distinct individuals visiting the site.</td>
-                                <td>N/A</td>
-                                <td>Highly variable. Small retailers: 50k+/mo.</td>
-                                <td>Volume indicator. Needs CVR & RPV to translate into revenue insights.</td>
+                                <td>Count of distinct individuals visiting.</td>
+                                <td>Count of Distinct Visitors (Unique IDs)</td>
+                                <td>Small retailers: 50k+/mo.</td>
+                                <td>Pure volume metric. Needs CVR & RPV for revenue context.</td>
+                                <td>Yes</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
                 <!-- 2. Revenue & Profitability KPIs -->
-                <div class="my-8">
-                    <h3 class="text-xl font-bold mt-8 mb-4 text-gray-900">2. Revenue & Profitability KPIs</h3>
+<div class="my-8">
+    <h3 class="text-xl font-bold mt-8 mb-4 text-gray-900">2. Revenue & Profitability KPIs</h3>
 
-                    <h4 class="text-lg font-bold mb-2 text-gray-800">Most Important</h4>
-                    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
-                        <thead>
-                            <tr class="bg-gray-200">
-                                <th>KPI</th>
-                                <th>Description</th>
-                                <th>Formula</th>
-                                <th>Benchmarks</th>
-                                <th>Insights</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="font-bold">Revenue</td>
-                                <td>Total money generated from sales in a given period.</td>
-                                <td>$Units Sold \times Price$ or $\sum(All Orders Value)$</td>
-                                <td>U.S. e-commerce revenue was $1.1 trillion in 2023.</td>
-                                <td>Top-line growth measure.</td>
-                            </tr>
-                            <tr class="bg-gray-50">
-                                <td class="font-bold">Conversion Rate (CR)</td>
-                                <td>% of visitors who buy.</td>
-                                <td>$(Orders \div Website Visitors) \times 100$</td>
-                                <td>Avg. U.S. e-commerce CR 2–3%.</td>
-                                <td>Shows site efficiency.</td>
-                            </tr>
-                            <tr>
-                                <td class="font-bold">Customer Lifetime Value (CLV or LTV)</td>
-                                <td>Total revenue expected from a customer.</td>
-                                <td>$AOV \times Purchase Frequency \times Average Lifespan$</td>
-                                <td>D2C CLV typically $200–$1,000.</td>
-                                <td>Critical for assessing sustainability vs. CAC.</td>
-                            </tr>
-                            <tr class="bg-gray-50">
-                                <td class="font-bold">Gross Profit Margin</td>
-                                <td>% of revenue left after subtracting COGS.</td>
-                                <td>$(Revenue – COGS) \div Revenue \times 100$</td>
-                                <td>E-commerce gross margins range 40–60%.</td>
-                                <td>Determines room for marketing, operations, and reinvestment.</td>
-                            </tr>
-                            <tr>
-                                <td class="font-bold">Net Profit Margin</td>
-                                <td>% of revenue left after all expenses.</td>
-                                <td>$(Net Profit \div Revenue) \times 100$</td>
-                                <td>Average U.S. e-commerce net margin 4–10%.</td>
-                                <td>Final measure of sustainability.</td>
-                            </tr>
-                            <tr class="bg-gray-50">
-                                <td class="font-bold">Return on Ad Spend (ROAS)</td>
-                                <td>How much revenue is generated for each $1 spent on ads.</td>
-                                <td>$Revenue from Ads \div Ad Spend$</td>
-                                <td>E-commerce avg. 4:1.</td>
-                                <td>Directly ties marketing spend to revenue outcomes.</td>
-                            </tr>
-                            <tr>
-                                <td class="font-bold">Average Revenue per User (ARPU)</td>
-                                <td>Revenue generated per active user in a given period.</td>
-                                <td>$Total Revenue \div Active Users$</td>
-                                <td>Subscription e-commerce ARPU often $20–$40/month.</td>
-                                <td>Helps evaluate profitability per customer segment.</td>
-                            </tr>
-                            <tr class="bg-gray-50">
-                                <td class="font-bold">Operating Margin</td>
-                                <td>% of revenue left after covering operating expenses.</td>
-                                <td>$Operating Income \div Revenue \times 100$</td>
-                                <td>U.S. online retailers: typically 5–12%.</td>
-                                <td>Shows operational efficiency.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+    <!-- Most Important -->
+    <h4 class="text-lg font-bold mb-2 text-gray-800">Most Important</h4>
+    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
+        <thead>
+            <tr class="bg-gray-200">
+                <th>KPI</th>
+                <th>Description</th>
+                <th>Formula (General)</th>
+                <th>Benchmarks</th>
+                <th>Insights</th>
+                <th>Can be Calculated?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="font-bold">Revenue</td>
+                <td>Total money generated from sales in a given period.</td>
+                <td>Units Sold × Price OR SUM(All Orders Value)</td>
+                <td>U.S. e-commerce revenue was $1.1T (2023)</td>
+                <td>Core top-line growth measure.</td>
+                <td>Yes</td>
+            </tr>
+            <tr class="bg-gray-50">
+                <td class="font-bold">Conversion Rate (CR)</td>
+                <td>% of visitors who buy.</td>
+                <td>(Orders ÷ Website Visitors) × 100</td>
+                <td>Avg. U.S. e-commerce CR 2–3%</td>
+                <td>Shows site efficiency.</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td class="font-bold">Customer Lifetime Value (CLV / LTV)</td>
+                <td>Total revenue expected from a customer.</td>
+                <td>AOV × Purchase Frequency × Average Lifespan</td>
+                <td>D2C CLV typically $200–$1,000</td>
+                <td>Key for long-term growth vs CAC.</td><td>No</td>
+            </tr>
+            <tr class="bg-gray-50">
+                <td class="font-bold">Gross Profit Margin</td>
+                <td>% of revenue left after subtracting COGS.</td>
+                <td>((Revenue – COGS) ÷ Revenue) × 100</td>
+                <td>E-commerce gross margins 40–60%</td>
+                <td>Determines space for marketing, ops, reinvestment.</td><td>Yes</td>
+            </tr>
+            <tr>
+                <td class="font-bold">Net Profit Margin</td>
+                <td>% of revenue left after all expenses.</td>
+                <td>(Net Profit ÷ Revenue) × 100</td>
+                <td>Avg. U.S. e-commerce 4–10%</td>
+                <td>Final sustainability check.</td><td>No</td>
+            </tr>
+            <tr class="bg-gray-50">
+                <td class="font-bold">Return on Ad Spend (ROAS)</td>
+                <td>Revenue generated for each $1 in ads.</td>
+                <td>(Revenue from Ads ÷ Ad Spend)</td>
+                <td>E-commerce avg. 4:1</td>
+                <td>Links marketing spend to revenue outcomes.</td><td>No</td>
+            </tr>
+            <tr>
+                <td class="font-bold">Average Revenue per User (ARPU)</td>
+                <td>Revenue per active user in a given period.</td>
+                <td>(Total Revenue ÷ Active Users)</td>
+                <td>Subscription e-commerce ARPU $20–$40/month</td>
+                <td>Evaluates profitability per customer segment.</td><td>Yes</td>
+            </tr>
+            <tr class="bg-gray-50">
+                <td class="font-bold">Operating Margin</td>
+                <td>% of revenue left after operating expenses.</td>
+                <td>(Operating Income ÷ Revenue) × 100</td>
+                <td>U.S. online retailers: 5–12%</td>
+                <td>Shows operational efficiency.</td><td>No</td>
+            </tr>
+        </tbody>
+    </table>
 
-                    <h4 class="text-lg font-bold mb-2 text-gray-800">Moderately Important</h4>
-                    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
-                        <thead>
-                            <tr class="bg-gray-200">
-                                <th>KPI</th>
-                                <th>Description</th>
-                                <th>Formula</th>
-                                <th>Benchmarks</th>
-                                <th>Insights</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="font-bold">Average Order Value (AOV)</td>
-                                <td>Average $ amount per order.</td>
-                                <td>$Revenue \div Number of Orders$</td>
-                                <td>U.S. e-commerce AOV ~$120–$150 (2024).</td>
-                                <td>Higher AOV = better CAC efficiency.</td>
-                            </tr>
-                            <tr class="bg-gray-50">
-                                <td class="font-bold">Revenue per Visitor (RPV)</td>
-                                <td>How much revenue each visitor generates.</td>
-                                <td>$Revenue \div Visitors$</td>
-                                <td>U.S. e-commerce avg. $2–$4 RPV.</td>
-                                <td>Combines CR + AOV into one metric.</td>
-                            </tr>
-                            <tr>
-                                <td class="font-bold">Cart Abandonment Rate</td>
-                                <td>% of users who add items to cart but don’t complete checkout.</td>
-                                <td>$(Abandoned Carts \div Initiated Carts) \times 100$</td>
-                                <td>Global avg. ~70% (Baymard Institute, 2024).</td>
-                                <td>Huge revenue leak.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+    <!-- Moderately Important -->
+    <h4 class="text-lg font-bold mb-2 text-gray-800">Moderately Important</h4>
+    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
+        <thead>
+            <tr class="bg-gray-200">
+                <th>KPI</th>
+                <th>Description</th>
+                <th>Formula (General)</th>
+                <th>Benchmarks</th>
+                <th>Insights</th>
+                <th>Can be Calculated?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="font-bold">Average Order Value (AOV)</td>
+                <td>Average $ amount per order.</td>
+                <td>(Revenue ÷ Number of Orders)</td>
+                <td>U.S. e-commerce AOV $120–$150 (2024)</td>
+                <td>Higher AOV = better CAC efficiency.</td><td>Yes</td>
+            </tr>
+            <tr class="bg-gray-50">
+                <td class="font-bold">Revenue per Visitor (RPV)</td>
+                <td>How much revenue each visitor generates.</td>
+                <td>(Revenue ÷ Website Visitors)</td>
+                <td>Avg. U.S. e-commerce $2–$4 RPV</td>
+                <td>Combines CR + AOV into one metric.</td><td>Yes</td>
+            </tr>
+            <tr>
+                <td class="font-bold">Cart Abandonment Rate</td>
+                <td>% of users adding items but not buying.</td>
+                <td>(Abandoned Carts ÷ Initiated Carts) × 100</td>
+                <td>Global avg. ~70% (Baymard, 2024)</td>
+                <td>Major revenue leak point.</td><td>No</td>
+            </tr>
+        </tbody>
+    </table>
 
-                    <h4 class="text-lg font-bold mb-2 text-gray-800">Less Important / Supporting</h4>
-                    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
-                        <thead>
-                            <tr class="bg-gray-200">
-                                <th>KPI</th>
-                                <th>Description</th>
-                                <th>Formula</th>
-                                <th>Benchmarks</th>
-                                <th>Insights</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="font-bold">Gross Merchandise Volume (GMV) / Total Sales</td>
-                                <td>Total value of goods sold via a platform.</td>
-                                <td>N/A</td>
-                                <td>Amazon GMV 2023: ~$700B.</td>
-                                <td>Investors like it as a scale indicator.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+    <!-- Less Important / Supporting -->
+    <h4 class="text-lg font-bold mb-2 text-gray-800">Less Important / Supporting</h4>
+    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
+        <thead>
+            <tr class="bg-gray-200">
+                <th>KPI</th>
+                <th>Description</th>
+                <th>Formula (General)</th>
+                <th>Benchmarks</th>
+                <th>Insights</th>
+                <th>Can be Calculated?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="font-bold">Gross Merchandise Volume (GMV)</td>
+                <td>Total value of goods sold via a platform.</td>
+                <td>SUM(All Transactions Value)</td>
+                <td>Amazon GMV 2023: ~$700B</td>
+                <td>Scale indicator, often for investors.</td><td>Yes</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
                 <!-- 3. Website Performance KPIs -->
-                <div class="my-8">
-                    <h3 class="text-xl font-bold mt-8 mb-4 text-gray-900">3. Website Performance KPIs</h3>
+<div class="my-8">
+    <h3 class="text-xl font-bold mt-8 mb-4 text-gray-900">3. Website Performance KPIs</h3>
 
-                    <h4 class="text-lg font-bold mb-2 text-gray-800">Most Important</h4>
-                    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
-                        <thead>
-                            <tr class="bg-gray-200">
-                                <th>KPI</th>
-                                <th>Description</th>
-                                <th>Formula</th>
-                                <th>Benchmarks</th>
-                                <th>Insights</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="font-bold">Bounce Rate</td>
-                                <td>% of visitors leaving after one page.</td>
-                                <td>$(Single-Page Sessions \div Total Sessions) \times 100$</td>
-                                <td>E-commerce avg. 40–55%.</td>
-                                <td>Indicates landing page relevance & engagement.</td>
-                            </tr>
-                            <tr class="bg-gray-50">
-                                <td class="font-bold">Cart Abandonment Rate</td>
-                                <td>% of shoppers who add items to cart but don’t purchase.</td>
-                                <td>$(Abandoned Carts \div Initiated Carts) \times 100$</td>
-                                <td>Global avg. ~70% (Baymard, 2024).</td>
-                                <td>Fixing checkout flow directly recaptures lost sales.</td>
-                            </tr>
-                            <tr>
-                                <td class="font-bold">Page Load Time</td>
-                                <td>Time it takes a page to load fully.</td>
-                                <td>N/A</td>
-                                <td>Best practice $<3$ seconds. Each +1s delay reduces conversions ~7%.</td>
-                                <td>Speed impacts SEO ranking & conversion.</td>
-                            </tr>
-                            <tr class="bg-gray-50">
-                                <td class="font-bold">Cart-to-Checkout Rate</td>
-                                <td>% moving from cart to checkout.</td>
-                                <td>$(Checkout Sessions \div Carts Created) \times 100$</td>
-                                <td>Strong performers hit 50–60%.</td>
-                                <td>Shows if cart UX is convincing enough to push buyers forward.</td>
-                            </tr>
-                            <tr>
-                                <td class="font-bold">Checkout Completion Rate</td>
-                                <td>% of checkout sessions that result in purchase.</td>
-                                <td>$(Orders \div Checkout Sessions) \times 100$</td>
-                                <td>Avg. 20–40% depending on friction.</td>
-                                <td>Highlights checkout design/payment issues.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+    <!-- Most Important -->
+    <h4 class="text-lg font-bold mb-2 text-gray-800">Most Important</h4>
+    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
+        <thead>
+            <tr class="bg-gray-200">
+                <th>KPI</th>
+                <th>Description</th>
+                <th>Formula</th>
+                <th>Benchmarks</th>
+                <th>Insights</th>
+                <th>Can be Calculated?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="font-bold">Bounce Rate</td>
+                <td>% of visitors leaving after one page.</td>
+                <td>(Single-Page Sessions ÷ Total Sessions) × 100</td>
+                <td>E-commerce avg. 40–55%</td>
+                <td>Indicates landing page relevance & engagement.</td><td>Yes</td>
+            </tr>
+            <tr class="bg-gray-50">
+                <td class="font-bold">Cart Abandonment Rate</td>
+                <td>% of shoppers who add items to cart but don’t purchase.</td>
+                <td>(Abandoned Carts ÷ Initiated Carts) × 100</td>
+                <td>Global avg. ~70% (Baymard, 2024)</td>
+                <td>Fixing checkout flow directly recaptures lost sales.</td><td>No</td>
+            </tr>
+            <tr>
+                <td class="font-bold">Page Load Time</td>
+                <td>Avg. time for a page to load fully.</td>
+                <td>Direct measurement (sec)</td>
+                <td>Best practice &lt;3s. Each +1s delay reduces conversions ~7%</td>
+                <td>Speed impacts SEO ranking & conversion rates.</td><td>No</td>
+            </tr>
+            <tr class="bg-gray-50">
+                <td class="font-bold">Cart-to-Checkout Conversion Rate</td>
+                <td>% of shoppers moving from cart to checkout.</td>
+                <td>(Checkout Sessions ÷ Carts Created) × 100</td>
+                <td>Strong performers: 50–60%</td>
+                <td>Shows if cart UX is convincing enough to push buyers forward.</td><td>No</td>
+            </tr>
+            <tr>
+                <td class="font-bold">Checkout Completion Rate</td>
+                <td>% of checkout sessions that result in purchase.</td>
+                <td>(Orders ÷ Checkout Sessions) × 100</td>
+                <td>Avg. 20–40% depending on friction</td>
+                <td>Highlights checkout design/payment issues.</td><td>No</td>
+            </tr>
+        </tbody>
+    </table>
 
-                    <h4 class="text-lg font-bold mb-2 text-gray-800">Moderately Important</h4>
-                    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
-                        <thead>
-                            <tr class="bg-gray-200">
-                                <th>KPI</th>
-                                <th>Description</th>
-                                <th>Formula</th>
-                                <th>Benchmarks</th>
-                                <th>Insights</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="font-bold">Average Session Duration</td>
-                                <td>Avg. time users spend per visit.</td>
-                                <td>N/A</td>
-                                <td>E-commerce sites ~2–4 minutes.</td>
-                                <td>Indicates browsing depth.</td>
-                            </tr>
-                            <tr class="bg-gray-50">
-                                <td class="font-bold">Exit Rate</td>
-                                <td>% of users leaving from a particular page.</td>
-                                <td>$(Page Exits \div Page Views) \times 100$</td>
-                                <td>Vary by page. Product pages often 25–40%.</td>
-                                <td>Useful to spot drop-off points.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+    <!-- Moderately Important -->
+    <h4 class="text-lg font-bold mb-2 text-gray-800">Moderately Important</h4>
+    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
+        <thead>
+            <tr class="bg-gray-200">
+                <th>KPI</th>
+                <th>Description</th>
+                <th>Formula</th>
+                <th>Benchmarks</th>
+                <th>Insights</th>
+                <th>Can be Calculated?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="font-bold">Average Session Duration</td>
+                <td>Avg. time users spend per visit.</td>
+                <td>Direct measurement (min)</td>
+                <td>E-commerce sites: 2–4 min</td>
+                <td>Indicates browsing depth & engagement.</td><td>Yes</td>
+            </tr>
+            <tr class="bg-gray-50">
+                <td class="font-bold">Exit Rate</td>
+                <td>% of users leaving from a particular page.</td>
+                <td>(Page Exits ÷ Page Views) × 100</td>
+                <td>Varies by page. Product pages often 25–40%</td>
+                <td>Useful to spot drop-off points.</td><td>Yes</td>
+            </tr>
+        </tbody>
+    </table>
 
-                    <h4 class="text-lg font-bold mb-2 text-gray-800">Less Important / Supporting</h4>
-                    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
-                        <thead>
-                            <tr class="bg-gray-200">
-                                <th>KPI</th>
-                                <th>Description</th>
-                                <th>Formula</th>
-                                <th>Benchmarks</th>
-                                <th>Insights</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="font-bold">Pages per Session</td>
-                                <td>Avg. number of pages viewed per visit.</td>
-                                <td>N/A</td>
-                                <td>~3–5 pages/session typical.</td>
-                                <td>Indicates browsing depth.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+    <!-- Supporting -->
+    <h4 class="text-lg font-bold mb-2 text-gray-800">Supporting</h4>
+    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
+        <thead>
+            <tr class="bg-gray-200">
+                <th>KPI</th>
+                <th>Description</th>
+                <th>Formula</th>
+                <th>Benchmarks</th>
+                <th>Insights</th>
+                <th>Can be Calculated?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="font-bold">Pages per Session</td>
+                <td>Avg. number of pages viewed per visit.</td>
+                <td>Direct measurement (pages)</td>
+                <td>Typical: 3–5 pages/session</td>
+                <td>Complements Avg. Session Duration to show browsing depth.</td><td>Yes</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-                <!-- 4. Customer Metrics KPIs -->
-                <div class="my-8">
-                    <h3 class="text-xl font-bold mt-8 mb-4 text-gray-900">4. Customer Metrics KPIs</h3>
 
-                    <h4 class="text-lg font-bold mb-2 text-gray-800">Most Important</h4>
-                    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
-                        <thead>
-                            <tr class="bg-gray-200">
-                                <th>KPI</th>
-                                <th>Description</th>
-                                <th>Formula</th>
-                                <th>Benchmarks</th>
-                                <th>Insights</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="font-bold">Repeat Purchase Rate</td>
-                                <td>% of customers buying again.</td>
-                                <td>$(Repeat Customers \div Total Customers) \times 100$</td>
-                                <td>E-commerce avg. ~28%, best-in-class 40%+.</td>
-                                <td>Critical for reducing CAC dependence.</td>
-                            </tr>
-                            <tr class="bg-gray-50">
-                                <td class="font-bold">Customer Churn Rate</td>
-                                <td>% of customers lost in a period.</td>
-                                <td>$(Lost Customers \div Starting Customers) \times 100$</td>
-                                <td>Retail churn often 20–30% annually.</td>
-                                <td>Shows long-term retention problems.</td>
-                            </tr>
-                            <tr>
-                                <td class="font-bold">Return Rate</td>
-                                <td>% of purchased products returned.</td>
-                                <td>$(Returned Orders \div Total Orders) \times 100$</td>
-                                <td>E-commerce avg. 15–20%, fashion up to 30–40%.</td>
-                                <td>Impacts margins, logistics, and fraud risk.</td>
-                            </tr>
-                            <tr class="bg-gray-50">
-                                <td class="font-bold">Customer Lifetime Value (CLV / LTV)</td>
-                                <td>Total value a customer brings during their relationship.</td>
-                                <td>$AOV \times Purchase Frequency \times Customer Lifespan$</td>
-                                <td>Many D2C brands $200–$1,000+.</td>
-                                <td>Links directly with CAC — core profitability test.</td>
-                            </tr>
-                            <tr>
-                                <td class="font-bold">Customer Retention Rate (CRR)</td>
-                                <td>% of customers who stay active over time.</td>
-                                <td>$((Customers End – New Customers) \div Customers Start) \times 100$</td>
-                                <td>Healthy e-commerce CRR = ~30–40% annually.</td>
-                                <td>Stronger CRR reduces dependency on expensive acquisition.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+           <!-- 4. Customer Metrics KPIs -->
+<div class="my-8">
+    <h3 class="text-xl font-bold mt-8 mb-4 text-gray-900">4. Customer Metrics KPIs</h3>
 
-                    <h4 class="text-lg font-bold mb-2 text-gray-800">Moderately Important</h4>
-                    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
-                        <thead>
-                            <tr class="bg-gray-200">
-                                <th>KPI</th>
-                                <th>Description</th>
-                                <th>Formula</th>
-                                <th>Benchmarks</th>
-                                <th>Insights</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="font-bold">Net Promoter Score (NPS)</td>
-                                <td>Measures customer willingness to recommend.</td>
-                                <td>N/A</td>
-                                <td>E-commerce avg. 30–40; leaders (Amazon) 50+.</td>
-                                <td>Links word-of-mouth with loyalty.</td>
-                            </tr>
-                            <tr class="bg-gray-50">
-                                <td class="font-bold">Customer Satisfaction Score (CSAT)</td>
-                                <td>% of customers satisfied with experience.</td>
-                                <td>$(Satisfied Customers \div Survey Respondents) \times 100$</td>
-                                <td>E-commerce CSAT 75–85%.</td>
-                                <td>Direct but narrow indicator of customer happiness.</td>
-                            </tr>
-                            <tr>
-                                <td class="font-bold">Purchase Frequency</td>
-                                <td>Avg. number of orders per customer in a period.</td>
-                                <td>$Total Orders \div Unique Customers$</td>
-                                <td>U.S. e-commerce avg. 2–4 purchases/year.</td>
-                                <td>Useful for segmenting loyal vs. occasional buyers.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-        </div>
-    </div>
+    <!-- Most Important -->
+    <h4 class="text-lg font-bold mb-2 text-gray-800">Most Important</h4>
+    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
+        <thead>
+            <tr class="bg-gray-200">
+                <th>KPI</th>
+                <th>Description</th>
+                <th>Formula</th>
+                <th>Benchmarks</th>
+                <th>Insights</th>
+                <th>Can be Calculated?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="font-bold">Repeat Purchase Rate (RPR)</td>
+                <td>% of customers who make more than one purchase.</td>
+                <td>(Repeat Customers ÷ Total Customers) × 100</td>
+                <td>Avg. ~28%; best-in-class 40%+</td>
+                <td>Critical for reducing CAC dependence.</td><td>Yes</td>
+            </tr>
+            <tr class="bg-gray-50">
+                <td class="font-bold">Customer Churn Rate</td>
+                <td>% of customers lost during a period.</td>
+                <td>(Lost Customers ÷ Starting Customers) × 100</td>
+                <td>Retail churn 20–30% annually</td>
+                <td>Reveals long-term retention problems.</td><td>No</td>
+            </tr>
+            <tr>
+                <td class="font-bold">Return Rate</td>
+                <td>% of orders that were returned.</td>
+                <td>(Returned Orders ÷ Total Orders) × 100</td>
+                <td>E-commerce avg. 15–20%; fashion 30–40%</td>
+                <td>Impacts margins, logistics costs, and fraud risk.</td><td>Yes</td>
+            </tr>
+            <tr class="bg-gray-50">
+                <td class="font-bold">Customer Lifetime Value (CLV / LTV)</td>
+                <td>Avg. total value a customer generates during their relationship.</td>
+                <td>AOV × Purchase Frequency × Customer Lifespan</td>
+                <td>Many D2C brands $200–$1,000+</td>
+                <td>Links directly with CAC; key profitability test.</td><td>No</td>
+            </tr>
+            <tr>
+                <td class="font-bold">Customer Retention Rate (CRR)</td>
+                <td>% of customers who remain active over time.</td>
+                <td>((Customers End − New Customers) ÷ Customers Start) × 100</td>
+                <td>Healthy CRR ~30–40% annually</td>
+                <td>Strong CRR reduces reliance on costly acquisition.</td><td>No</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Moderately Important -->
+    <h4 class="text-lg font-bold mb-2 text-gray-800">Moderately Important</h4>
+    <table class="bg-white rounded-lg overflow-hidden text-gray-600 border border-gray-200 mb-8">
+        <thead>
+            <tr class="bg-gray-200">
+                <th>KPI</th>
+                <th>Description</th>
+                <th>Formula</th>
+                <th>Benchmarks</th>
+                <th>Insights</th>
+                <th>Can be Calculated?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="font-bold">Net Promoter Score (NPS)</td>
+                <td>Measures how likely customers are to recommend the brand.</td>
+                <td>Survey-based (Promoters − Detractors) ÷ Respondents × 100</td>
+                <td>E-commerce avg. 30–40; leaders 50+</td>
+                <td>Captures word-of-mouth potential and loyalty.</td><td>No</td>
+            </tr>
+            <tr class="bg-gray-50">
+                <td class="font-bold">Customer Satisfaction Score (CSAT)</td>
+                <td>% of customers satisfied with an experience.</td>
+                <td>(Satisfied Customers ÷ Survey Respondents) × 100</td>
+                <td>E-commerce CSAT 75–85%</td>
+                <td>Simple, direct measure of experience quality.</td><td>No</td>
+            </tr>
+            <tr>
+                <td class="font-bold">Purchase Frequency</td>
+                <td>Avg. number of purchases per customer in a period.</td>
+                <td>Total Orders ÷ Unique Customers</td>
+                <td>U.S. e-commerce avg. 2–4 per year</td>
+                <td>Helps identify loyal vs. occasional buyers.</td><td>Yes</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
 
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
